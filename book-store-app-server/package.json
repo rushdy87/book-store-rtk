@@ -1,0 +1,15 @@
+{
+  "name": "book-store-app-server",
+  "version": "1.0.0",
+  "description": "json server for book store app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "json-server -p 3005 --watch data.json"
+  },
+  "author": "Rushdy",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.1"
+  }
+}
