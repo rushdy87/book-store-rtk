@@ -11,6 +11,18 @@
       "title": "The Shadow of the Wind",
       "description": "Barcelona, 1945: A city slowly heals from its war wounds, and Daniel, an antiquarian book dealer's son who mourns the loss of his mother, finds solace in a mysterious book entitled The Shadow of the Wind, by one Julian Carax. But when he sets out to find the author's other works, he makes a shocking discovery: someone has been systematically destroying every copy of every book Carax has written. In fact, Daniel may have the last of Carax's books in existence. Soon Daniel's seemingly innocent quest opens a door into one of Barcelona's darkest secrets--an epic story of murder, madness, and doomed love",
       "price": 35
+    },
+    {
+      "title": "A Tale of Two Cities",
+      "price": "44",
+      "description": "a historical novel published in 1859 by Charles Dickens, set in London and Paris before and during the French Revolution.",
+      "id": 3
+    },
+    {
+      "title": "Children of Gebelawi",
+      "price": "37",
+      "description": "a novel by the Egyptian writer and Nobel laureate Naguib Mahfouz. It is also known by its Egyptian dialectal transliteration, Awlad Haretna, and by the alternative translated transliteral Arabic title of Children of Our Alley. ",
+      "id": 4
     }
   ]
 }
