@@ -5,8 +5,16 @@ import { removeBook } from '../../store/bookSlice';
 const BooksList = ({ isLoading, books, isLoggedIn }) => {
   const dispatch = useDispatch();
 
-  const handleRemove = (id) => {
-    dispatch(removeBook(id));
+  const handleRemove = (book) => {
+    // Thunks may return a value when dispatched. A common use case is to return a promise
+    // from the thunk, dispatch the thunk from a component, and then wait for the promise
+    // to resolve before doing additional work
+    dispatch(removeBook(book))
+      .unwrap() //or .then(unwrapResult)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => console.log(error));
   };
 
   const renderBooksList =
@@ -30,7 +38,7 @@ const BooksList = ({ isLoading, books, isLoggedIn }) => {
                 type="button"
                 className="btn btn-danger"
                 disabled={!isLoggedIn}
-                onClick={() => handleRemove(book.id)}
+                onClick={() => handleRemove(book)}
               >
                 Delete
               </button>
