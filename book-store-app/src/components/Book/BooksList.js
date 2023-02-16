@@ -1,6 +1,14 @@
-import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import { removeBook } from '../../store/bookSlice';
 
 const BooksList = ({ isLoading, books, isLoggedIn }) => {
+  const dispatch = useDispatch();
+
+  const handleRemove = (id) => {
+    dispatch(removeBook(id));
+  };
+
   const renderBooksList =
     books.length > 0 ? (
       books.map((book) => {
@@ -22,6 +30,7 @@ const BooksList = ({ isLoading, books, isLoggedIn }) => {
                 type="button"
                 className="btn btn-danger"
                 disabled={!isLoggedIn}
+                onClick={() => handleRemove(book.id)}
               >
                 Delete
               </button>
