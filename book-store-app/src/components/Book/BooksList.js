@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 
-import { removeBook } from '../../store/bookSlice';
+import { removeBook, getBook } from '../../store/bookSlice';
 
 const BooksList = ({ isLoading, books, isLoggedIn }) => {
   const dispatch = useDispatch();
@@ -17,6 +17,10 @@ const BooksList = ({ isLoading, books, isLoggedIn }) => {
       .catch((error) => console.log(error));
   };
 
+  const handleRead = (book) => {
+    dispatch(getBook(book));
+  };
+
   const renderBooksList =
     books.length > 0 ? (
       books.map((book) => {
@@ -31,6 +35,7 @@ const BooksList = ({ isLoading, books, isLoggedIn }) => {
                 type="button"
                 className="btn btn-primary"
                 disabled={!isLoggedIn}
+                onClick={() => handleRead(book)}
               >
                 Read
               </button>
